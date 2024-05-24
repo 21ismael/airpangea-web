@@ -1,0 +1,30 @@
+:root {
+    --color-dark: #232b38;
+    --color-blue: #2b3947; 
+    --color-red: #E50914; 
+    --color-darkred: #af0000; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'HelveticaNowRegular';
+    src: url('./assets/fonts/HelveticaNowTextRegular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'HelveticaNowBold';
+    src: url('./assets/fonts/HelveticaNowTextBold.woff2') format('woff2');
+}
+
+body {
+    font-family: "HelveticaNowRegular", sans-serif;
+}
+
+.container-fluid {
+    max-width: 1700px;
+}

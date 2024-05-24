@@ -1,0 +1,111 @@
+.top-header {
+    height: 45px;
+    background-color: var(--color-blue);
+}
+
+.top-header-content {
+    height: 100%;
+}
+
+.top-header-content select {
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    padding: 0 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    height: 30px;
+    outline: none;
+}
+
+.top-header-content button {
+    padding: 3px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--color-red);
+    color: #fff;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.top-header-content button:hover {
+    background-color: var(--color-darkred);
+}
+
+.header {
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    top: 30; 
+    background-color: var(--color-dark);
+    border: none;
+    z-index: 1;
+}
+
+.logo {
+    width: 270px;
+}
+
+.navbar {
+    height: 100%;
+    display: fixed;
+}
+
+.navbar-toggler,
+.btn-close {
+    box-shadow: none !important;
+    border: none;
+}
+
+.navbar-toggler {
+    padding-left: 0;
+    padding-right: 5px;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.btn-close {
+    /* margin: 0; */
+    opacity: 1;
+}
+
+.offcanvas {
+    background-color: white;
+    padding: 30px;
+    z-index: 2;
+}
+
+.offcanvas-backdrop {
+    z-index: 1;
+}
+
+.offcanvas {
+    border: none !important;
+}
+
+.offcanvas-header {
+    display: flex;
+    gap: 5px;
+}
+
+ul {
+    font-size: 22px;
+    font-family: 'HelveticaNowBold';
+
+}
+
+ul .nav-link {
+    color: var(--color-dark);
+}
+
+ul .nav-link:hover {
+    color: var(--color-red);
+}
+
+/* Media query para movil */
+@media (max-width: 450px) {
+    .top-header-content {
+        font-size: 13px;
+    }
+}
