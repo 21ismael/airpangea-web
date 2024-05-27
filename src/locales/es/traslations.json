@@ -1,8 +1,39 @@
 {
     "sign_up": "Regístrate",
-    "log_in": "Iniciar Sesión",
+    "log_in": "Iniciar sesión",
     "book_a_flight": "Reservar un Vuelo",
     "about_us": "Sobre Nosotros",
     "our_services": "Nuestros Servicios",
-    "log_out": "Cerrar Sesión"
+    "log_out": "Cerrar Sesión",
+    
+    "login": {
+        "title": "Iniciar sesión en la cuenta",
+        "email_placeholder": "Correo electrónico",
+        "password_placeholder": "Contraseña",
+        "forgot_password": "¿Olvidaste tu Contraseña?",
+        "log_in": "Iniciar sesión",
+        "sign_up_prompt": "¿No tienes una cuenta?",
+        "sign_up": "Regístrate",
+        "login_with_apple": "Iniciar sesión con Apple",
+        "login_with_google": "Iniciar sesión con Google",
+        "empty_field_error": "* Debes completar todos los campos",
+        "invalid_credentials_error": "* Credenciales Incorrectas"
+    },
+
+    "signup": {
+        "title": "Configuración de nueva cuenta",
+        "name_placeholder": "Nombre",
+        "lastname_placeholder": "Apellido",
+        "email_placeholder": "Correo electrónico",
+        "password_placeholder": "Contraseña",
+        "sign_up": "Crear cuenta",
+        "show_password": "Ver contraseña",
+        "empty_field_error": "* Debes completar todos los campos",
+        "signup_error": "Error al registrar el usuario",
+        "login_prompt": "Ya tienes una cuenta?",
+        "login": "Iniciar sesión",
+        "signup_with_apple": "Crear cuenta con Apple",
+        "signup_with_google": "Crear cuenta con Google"
+        
+    }
 }

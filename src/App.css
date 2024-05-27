@@ -28,3 +28,23 @@ body {
 .container-fluid {
     max-width: 1700px;
 }
+
+.btn-p {
+    padding: 3px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--color-red);
+    color: #fff;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-p:hover {
+    background-color: var(--color-darkred);
+}
+
+.flight-info {
+    height: 350px;
+    width: 100%;
+    background-image: url(./assets/images/skyline-view-from-la-mer-dubai-w1920x480.jpg);
+    background-size: cover;
+}

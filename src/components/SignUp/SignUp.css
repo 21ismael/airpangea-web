@@ -1,0 +1,54 @@
+/*------ Settings ------*/
+.password-container {
+    position: relative;
+    display: flex;
+    border: 1px solid blue;
+}
+
+.password-container input {
+    padding: 0 !important;
+    border: none !important;
+    width: 90%;
+    border-radius: 0 !important; 
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 30px;
+    user-select: none;
+    fill: #a5a5b0;
+    width: 40px;
+    margin: 0;
+}
+
+.container .eye {
+    position: absolute;
+    animation: keyframes-fill .5s;
+}
+
+.container .eye-slash {
+    position: absolute;
+    animation: keyframes-fill .5s;
+    display: none;
+}
+
+/* ------ On check event ------ */
+.container input:checked~.eye {
+    display: none;
+}
+
+.container input:checked~.eye-slash {
+    display: block;
+}
+
+/* ------ Hide the default checkbox ------ */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}

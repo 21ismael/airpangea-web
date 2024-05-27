@@ -4,5 +4,37 @@
     "book_a_flight": "Book a Flight",
     "about_us": "About Us",
     "our_services": "Our Services",
-    "log_out": "Log Out"
+    "log_out": "Log Out",
+
+    "login": {
+        "title": "Account log in",
+        "email_placeholder": "Email",
+        "password_placeholder": "Password",
+        "forgot_password": "Forgot Password?",
+        "log_in": "Log in",
+        "sign_up_prompt": "Don't have an account?",
+        "sign_up": "Sign up",
+        "login_with_apple": "Log in with Apple",
+        "login_with_google": "Log in with Google",
+        "empty_field_error": "* You must fill in all fields",
+        "invalid_credentials_error": "* Invalid credentials"
+    },
+
+    "signup": {
+        "title": "New account setup",
+        "name_placeholder": "Name",
+        "lastname_placeholder": "Last Name",
+        "email_placeholder": "Email",
+        "password_placeholder": "Password",
+        "sign_up": "Create account",
+        "show_password": "Show password",
+        "empty_field_error": "* You must fill out all fields",
+        "signup_error": "Error signing up",
+        "login_prompt": "Already have an account?",
+        "login": "Log In",
+        "signup_with_apple": "Create an account with Apple",
+        "signup_with_google": "Create an account with Google"
+    }
+
+    
 }

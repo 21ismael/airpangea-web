@@ -1,6 +1,7 @@
 .top-header {
     height: 45px;
     background-color: var(--color-blue);
+    border-bottom: 1px solid grey;
 }
 
 .top-header-content {
@@ -18,24 +19,9 @@
     outline: none;
 }
 
-.top-header-content button {
-    padding: 3px 15px;
-    border: none;
-    border-radius: 4px;
-    background-color: var(--color-red);
-    color: #fff;
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-.top-header-content button:hover {
-    background-color: var(--color-darkred);
-}
-
 .header {
     height: 70px;
     width: 100%;
-    position: fixed;
-    top: 30; 
     background-color: var(--color-dark);
     border: none;
     z-index: 1;
@@ -108,4 +94,146 @@ ul .nav-link:hover {
     .top-header-content {
         font-size: 13px;
     }
+}
+
+/* Dialog */
+
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+}
+
+.dialog {
+    width: 450px;
+    height: auto;
+    margin: 10px;
+    background-color: white;
+    border-radius: 8px;
+    border-radius: 2px solid black;
+    padding: 10px;
+    padding-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.dialog .form-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 15px 25px;
+}
+
+.dialog .form-container .btn-p {
+    padding: 6px 15px;
+}
+
+.dialog .title {
+    text-align: center;
+    margin: 10px 0 20px 0;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.error-message {
+    font-weight: 600;
+    color: var(--color-red);
+}
+
+.dialog .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 15px;
+}
+
+.dialog .input {
+    border-radius: 5px;
+    border: 1px solid #c0c0c0;
+    outline: 0 !important;
+    box-sizing: border-box;
+    padding: 6px 14px;
+}
+
+.dialog .page-link {
+    text-decoration: underline;
+    margin: 0;
+    text-align: end;
+    color: #747474;
+    text-decoration-color: #747474;
+}
+
+.dialog .page-link-label {
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.dialog .sign-up-link {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.dialog .btn-close {
+    float: right;
+}
+
+.dialog .page-link-label:hover {
+    color: #000;
+}
+
+.dialog .page-link-label:hover {
+    color: #000;
+}
+
+.dialog .buttons-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.dialog .apple-login-button,
+.dialog .google-login-button {
+    border-radius: 4px;
+    padding: 6px 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bolder;
+    gap: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.dialog .apple-login-button {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #000;
+}
+
+.dialog .google-login-button {
+    border: 1px solid #c0c0c0;
+}
+
+.apple-login-button:hover {
+    background-color: #272727;
+}
+
+.google-login-button:hover {
+    background-color: rgb(236, 236, 236);
+}
+
+.dialog .buttons-container img{
+    width: 18px;
 }
