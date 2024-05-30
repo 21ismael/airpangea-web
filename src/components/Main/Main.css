@@ -94,7 +94,6 @@
 
 .cities {
     font-size: 18px;
-    padding-left: 15px;
 }
 
 .fare {
@@ -133,11 +132,49 @@
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
     .cities {
         margin-bottom: 10px;
-        font-size: 15px;
+        font-size: 16px;
     }
+}
+
+@media (max-width: 450px) {
+    .departure-date {
+        font-size: 14px;
+        padding-right: 10px;
+    }
+
+    .cities {
+        font-size: 15px;
+        padding: 0;
+        padding-right: 12px;
+    }
+    
+}
+
+@media (max-width: 391px) {
+    .departure-date,
+    .cities {
+        font-size: 13px;
+    }
+    
+}
+
+@media (max-width: 362px) {
+    .departure-date,
+    .cities {
+        font-size: 12px;
+    }
+    
+}
+
+@media (max-width: 345px) {
+    .departure-date,
+    .cities {
+        font-size: 11px;
+    }
+    
 }
 
 /*Row box*/

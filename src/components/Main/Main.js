@@ -235,7 +235,6 @@ export default function Main() {
                                         <div className='row'>
                                             <div className="col-4 col-md-2 departure-date d-flex align-items-center">{formattedDate(flight.departureDateTime)}</div>
                                             <div className="col-8 col-md-5 cities d-flex align-items-center justify-content-end">
-
                                                 {flight.airportDeparture.city} ----- <div className='codeAP'>{convertToAP(flight.id)}</div> ----- {flight.airportArrival.city}
                                             </div>
                                             <div className="col-6 col-md-2 fare d-flex flex-column justify-content-center">{t('flight.fare')} <br /><span>{flight.price}€</span></div>
