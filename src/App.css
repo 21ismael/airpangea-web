@@ -21,6 +21,11 @@
     src: url('./assets/fonts/HelveticaNowTextBold.woff2') format('woff2');
 }
 
+@font-face {
+    font-family: 'Emirates';
+    src: url('./assets/fonts/emirates-bold-v3.woff2') format('woff2');
+}
+
 body {
     font-family: "HelveticaNowRegular", sans-serif;
 }
@@ -42,9 +47,6 @@ body {
     background-color: var(--color-darkred);
 }
 
-.flight-info {
-    height: 350px;
-    width: 100%;
-    background-image: url(./assets/images/skyline-view-from-la-mer-dubai-w1920x480.jpg);
-    background-size: cover;
+.container-1000 {
+    max-width: 1000px;
 }

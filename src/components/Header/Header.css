@@ -90,10 +90,46 @@ ul .nav-link:hover {
 }
 
 /* Media query para movil */
-@media (max-width: 450px) {
+@media (max-width: 480px) {
     .top-header-content {
         font-size: 13px;
     }
+}
+
+.bottom-header {
+    position: relative;
+    height: 290px;
+    background-image: url('../../assets/images/skyline-view-from-la-mer-dubai-w1920x480.jpg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    padding: 0px 10px;
+}
+
+.bottom-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    z-index: 0; 
+}
+
+.bottom-heder-content {
+    font-family: 'Emirates';
+    color: white;
+    z-index: 1; 
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.bottom-heder-content button {
+    font-weight: bolder;
+    font-family: 'HelveticaNowBold';
 }
 
 /* Dialog */

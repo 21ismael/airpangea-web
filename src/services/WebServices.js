@@ -47,4 +47,14 @@ export default class WebServices{
             throw error;
         }
     }
+
+    async getScheduledFlights() {
+        const response = await fetch(`${this.SERVER}/flight`);
+
+        if (!response.ok) {
+            throw new Error('Failed to get all the flights');
+        }
+
+        return response.json();
+    }
 }

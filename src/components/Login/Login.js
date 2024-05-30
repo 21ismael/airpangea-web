@@ -12,8 +12,6 @@ export default function Login({ showDialog, setShowDialog, updateUser, openSignu
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
-   
-
     const resetFields = () => {
         setEmail('');
         setPassword('');

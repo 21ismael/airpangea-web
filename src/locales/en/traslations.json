@@ -5,7 +5,6 @@
     "about_us": "About Us",
     "our_services": "Our Services",
     "log_out": "Log Out",
-
     "login": {
         "title": "Account log in",
         "email_placeholder": "Email",
@@ -19,7 +18,6 @@
         "empty_field_error": "* You must fill in all fields",
         "invalid_credentials_error": "* Invalid credentials"
     },
-
     "signup": {
         "title": "New account setup",
         "name_placeholder": "Name",
@@ -34,7 +32,48 @@
         "login": "Log In",
         "signup_with_apple": "Create an account with Apple",
         "signup_with_google": "Create an account with Google"
-    }
+    },
 
-    
+    "header": {
+        "title_1": "Your best",
+        "title_2": "EXPERIENCES",
+        "title_3": "are on us",
+        "more_info": "More info"
+    },
+
+    "flight": {
+        "from": "From",
+        "to": "To",
+        "country": "Country",
+        "select_airport": "Select an airport",
+        "passengers": "Passenger(s)",
+        "search_flights": "Search flights",
+        "available_flights": "Available flights",
+        "fare": "Basic Fare",
+        "select": "Select"
+    },
+
+    "services": {
+        "hotel": "Hotels",
+        "car": "Car Rentals",
+        "activities": "Activities",
+        "group": "Group Travels",
+        "booking": "My Bookings",
+        "route": "Route Map"
+    },
+
+    "destinations": {
+        "title": "Highlighted destinations from",
+        "title_span": "Alicante",
+        "eau": "UNITED ARAB EMIRATES",
+        "eau_city": "Dubai",
+        "thailand": "THAILAND",
+        "mexico": "MEXICO",
+        "mexico_city": "Mexico City",
+        "vietnam_city": "Hanoi",
+        "fare_msg": "Book Basic fare until August 4th",
+        "from": "from",
+        "more_fare": "See more fares",
+        "conditions": "* General conditions apply"
+    }
 }

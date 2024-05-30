@@ -35,5 +35,50 @@
         "signup_with_apple": "Crear cuenta con Apple",
         "signup_with_google": "Crear cuenta con Google"
         
+    },
+
+    "header": {
+        "title_1": "Sus mejores",
+        "title_2": "EXPERIENCIAS",
+        "title_3": "corren de nuestra cuenta",
+        "more_info": "Más información"
+    }, 
+    
+    "flight": {
+        "from": "Origen",
+        "to": "Destino",
+        "country": "País",
+        "select_airport": "Selecciona un aeropuerto",
+        "passengers": "Pasajero(s)",
+        "search_flights": "Buscar vuelos",
+        "available_flights": "Vuelos disponibles",
+        "fare": "Tarifa Basic",
+        "select": "Seleccionar"
+    },
+
+    "services": {
+        "hotel": "Hoteles",
+        "car": "Alquiler de coches",
+        "activities": "Actividades",
+        "group": "Viajes grupales",
+        "booking": "Mis reservas",
+        "route": "Mapa de rutas"
+    },
+
+    "destinations": {
+        "title": "Destinos destacados desde",
+        "title_span": "Alicante",
+        "eau": "EMIRATOS ÁRABES UNIDOS",
+        "eau_city": "Dubái",
+        "thailand": "TAILANDIA",
+        "mexico": "MÉXICO",
+        "mexico_city": "Ciudad de México",
+        "vietnam_city": "Hanói",
+        "fare_msg": "Reservar tarifa Basic hasta el 04 de agosto",
+        "from": "desde",
+        "more_fare": "Ver más tarifas",
+        "conditions": "* Se aplican condiciones generales"
     }
+    
+    
 }

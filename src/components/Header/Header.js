@@ -17,7 +17,7 @@ export default function Header() {
     };
 
     /*Dialog for login and register*/
-    let [showLoginDialog, setShowLoginDialog] = useState(false); 
+    let [showLoginDialog, setShowLoginDialog] = useState(false);
     let [showSignupDialog, setShowSignupDialog] = useState(false);
 
     let openLoginDialog = () => {
@@ -40,7 +40,7 @@ export default function Header() {
     };
 
     return <>
-        <Login showDialog={showLoginDialog} setShowDialog={setShowLoginDialog} updateUser={updateUser} openSignupDialog={openSignupDialog}/>
+        <Login showDialog={showLoginDialog} setShowDialog={setShowLoginDialog} updateUser={updateUser} openSignupDialog={openSignupDialog} />
         <SignUp showDialog={showSignupDialog} setShowDialog={setShowSignupDialog} openLoginDialog={openLoginDialog} />
 
         <div className='top-header'>
@@ -57,14 +57,14 @@ export default function Header() {
                             {user.user.name} {user.user.lastName}
                         </span>
                         <button className='btn-p d-flex align-items-center gap-1' onClick={handleLogout}>
-                            <img src={logout_icon} alt='logout icon'/>
+                            <img src={logout_icon} alt='logout icon' />
                             {t('log_out')}
                         </button>
                     </>
                 ) : (
                     <>
                         <button className='btn-p' onClick={openSignupDialog}>{t('sign_up')}</button>
-                        <button className='btn-p' onClick={openLoginDialog}>{t('log_in')}</button>
+                        <button className='btn-p' id='btn-login' onClick={openLoginDialog}>{t('log_in')}</button>
                     </>
                 )}
             </div>
@@ -103,6 +103,15 @@ export default function Header() {
                     </div>
                 </div>
             </nav >
+        </div>
+
+        <div className='bottom-header d-flex justify-content-center align-items-center'>
+            <div className='container-1000 w-100 bottom-heder-content'>
+                <div>
+                    <h1>{t('header.title_1')} <br />{t('header.title_2')} <br /> {t('header.title_3')}</h1>
+                    <button className='btn-p'>{t('header.more_info')}</button>
+                </div>
+            </div>
         </div>
     </>
 }
