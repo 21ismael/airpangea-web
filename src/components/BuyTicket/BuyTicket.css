@@ -1,0 +1,165 @@
+.buy-ticket {
+    padding: 30px 10px;
+}
+
+.buy-ticket .flight-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-bottom: 10px;
+    font-family: 'Emirates';
+    background-color: none;
+}
+
+.buy-ticket .flight-title img {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+
+
+.buy-ticket .flight-info {
+    padding: 15px 20px;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+
+
+.buy-ticket .date,
+.buy-ticket .cities {
+    font-size: 20px;
+}
+
+@media (max-width: 520px) {
+    .buy-ticket .cities {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+}
+
+.buy-ticket .fare {
+    font-size: 16px;
+    line-height: 0.9;
+    color: grey;
+}
+
+.buy-ticket .codeAP {
+    font-size: 12px;
+    line-height: 0.9;
+    color: var(--color-red);
+    margin: 5px;
+    margin-top: 8px;
+}
+
+
+/*Select fare*/
+
+.fare-card {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: auto;
+    padding-bottom: 5px;
+    font-weight: bolder;
+    min-height: 330px;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0 !important;
+    border: 3px solid transparent;
+}
+
+.fare-card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 2px 2px 0 0;
+}
+
+.fare-text {
+    font-style: italic;
+    color: grey;
+}
+
+.fare-card .fare-sentence img {
+    width: 19px;
+}
+
+.fare-sentence p {
+    font-size: 13px;
+}
+
+.new-price {
+    margin: auto;
+    width: fit-content;
+    padding: 2px 10px;
+    color: black;
+    background-color: white;
+    font-weight: bolder;
+    border: none;
+    border-radius: 4px;
+}
+
+.new-price span {
+    font-size: 19px;
+    position: relative;
+    display: inline-block;
+}
+
+.new-price span::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-red);
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+}
+
+.selected-fare {
+    border: 3px solid var(--color-red);
+    border-radius: 5px;
+    color: var(--color-darkred);
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 3px 8px;
+}
+
+.fare-title {
+    font-size: 18px;
+}
+
+.fare-title span {
+    font-family: 'Emirates';
+}
+
+/*Insertar los pasajeros */
+
+.passenger-form {
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, .select-seat {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.passengers h5 {
+    font-family: 'Emirates';
+}

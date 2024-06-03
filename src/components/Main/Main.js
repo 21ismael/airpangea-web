@@ -1,22 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './Main.css';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import WebServices from '../../services/WebServices';
 import formattedDate from '../../utils/formattedDate';
 import plane_icon from '../../assets/images/airplane_icon.png';
 import convertToAP from '../../utils/convertToAP';
-import hotel_icon from '../../assets/svg/row-iconos/hotel.svg';
-import coche_icon from '../../assets/svg/row-iconos/coche.svg';
-import visitas_icon from '../../assets/svg/row-iconos/visitas-actividades.svg';
-import chofer_icon from '../../assets/svg/row-iconos/servic-chofer.svg';
-import traslados_icon from '../../assets/svg/row-iconos/translados.svg';
-import avion_icon from '../../assets/svg/row-iconos/avion.svg';
-import dubai from '../../assets/images/images-destinos/dubai.jpg';
-import bangkok from '../../assets/images/images-destinos/bangkok.jpg';
-import singapur from '../../assets/images/images-destinos/singapur.jpg';
-import mexico from '../../assets/images/images-destinos/mexico.jpg';
-import hanoi from '../../assets/images/images-destinos/hanoi.jpg';
-import kuala_lumpur from '../../assets/images/images-destinos/kuala-lumpur.jpg';
+import Servicios from './Servicios';
+import Destinos from './Destinos'; 
 
 export default function Main() {
     const { t } = useTranslation();
@@ -33,6 +24,8 @@ export default function Main() {
     const [filteredFlights, setFilteredFlights] = useState([]);
 
     const [user, setUser] = useState();
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         const webServices = new WebServices();
@@ -120,11 +113,12 @@ export default function Main() {
         } else {
             alert(JSON.stringify(flight));
             localStorage.setItem('flight', JSON.stringify(flight));
+            localStorage.setItem('passengerCount', passengerCount)
+            navigate('/buy-ticket'); 
         }
     };
 
     return <>
-
         <section className='flight d-flex flex-column gap-3'>
             <form onSubmit={handleSubmit} className='container-1000 d-flex flex-column'>
                 <div className='flight-title d-flex'>
@@ -190,35 +184,9 @@ export default function Main() {
                     </div>
 
                 </div>
-
             </form>
 
-            <div class="servicios my-2 row container-1000 d-none col-lg-12 d-lg-flex">
-                <div class="icon-box col-md-2">
-                    <img src={hotel_icon} alt="icon" />
-                    <p>{t('services.hotel')}</p>
-                </div>
-                <div class="icon-box col-4 col-md-2">
-                    <img src={coche_icon} alt="icon" />
-                    <p>{t('services.car')}</p>
-                </div>
-                <div class="icon-box col-4 col-md-2">
-                    <img src={visitas_icon} alt="icon" />
-                    <p>{t('services.activities')}</p>
-                </div>
-                <div class="icon-box col-4 col-md-2">
-                    <img src={chofer_icon} alt="icon" />
-                    <p>{t('services.group')}</p>
-                </div>
-                <div class="icon-box col-4 col-md-2">
-                    <img src={traslados_icon} alt="icon" />
-                    <p>{t('services.booking')}</p>
-                </div>
-                <div class="icon-box col-4 col-md-2">
-                    <img src={avion_icon} alt="icon" />
-                    <p>{t('services.route')}</p>
-                </div>
-            </div>
+            <Servicios />
 
             <div className="filtered-flights container-1000 w-100 mt-1">
                 {filteredFlights.length > 0 && (
@@ -250,80 +218,7 @@ export default function Main() {
                 )}
             </div>
 
-            <div className='destinos-container container-1000 w-100'>
-                <div className='row m-0'>
-
-                    <div className='col-12 text-center'>
-                        <h3>{t('destinations.title')} <span>{t('destinations.title_span')}</span></h3>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4 p-0">
-                        <div class="box-destino text-center m-2">
-                            <img src={dubai} alt="destino img" />
-                            <p class="country m-0 m-2">{t('destinations.eau')}</p>
-                            <h3 class="city m-0 m-2">{t('destinations.eau_city')}</h3>
-                            <p class="msg m-0 m-2">{t('destinations.fare_msg')}</p>
-                            <p class="price m-0 m-2">{t('destinations.from')} EUR 674*</p>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4 p-0">
-                        <div class="box-destino text-center m-2">
-                            <img src={bangkok} alt="destino-img" />
-                            <p class="country  m-0 m-2">{t('destinations.thailand')}</p>
-                            <h3 class="city m-0 m-2">Bangkok</h3>
-                            <p class="msg m-0 m-2">{t('destinations.fare_msg')}</p>
-                            <p class="price m-0 m-2">{t('destinations.from')} EUR 719*</p>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4 p-0">
-                        <div class="box-destino text-center m-2">
-                            <img src={singapur} alt="destino-img" />
-                            <p class="country  m-0 m-2">SINGAPUR</p>
-                            <h3 class="city m-0 m-2">Singapur</h3>
-                            <p class="msg m-0 m-2">{t('destinations.fare_msg')}</p>
-                            <p class="price m-0 m-2">{t('destinations.from')} EUR 739*</p>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4 p-0">
-                        <div class="box-destino text-center m-2">
-                            <img src={mexico} alt="destino-img" />
-                            <p class="country  m-0 m-2">MÉXICO</p>
-                            <h3 class="city m-0 m-2">Ciudad de México</h3>
-                            <p class="msg m-0 m-2">{t('destinations.fare_msg')}</p>
-                            <p class="price m-0 m-2">{t('destinations.from')} EUR 788*</p>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4 p-0">
-                        <div class="box-destino text-center m-2">
-                            <img src={hanoi} alt="destino-img" />
-                            <p class="country  m-0 m-2">VIETNAM</p>
-                            <h3 class="city m-0 m-2">{t('destinations.vietnam_city')}</h3>
-                            <p class="msg m-0 m-2">{t('destinations.fare_msg')}</p>
-                            <p class="price m-0 m-2">{t('destinations.from')} EUR 831*</p>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4 p-0">
-                        <div class="box-destino text-center m-2">
-                            <img src={kuala_lumpur} alt="destino-img" />
-                            <p class="country  m-0 m-2">MALASIA</p>
-                            <h3 class="city m-0 m-2">Kuala Lumpur</h3>
-                            <p class="msg m-0 m-2">{t('destinations.fare_msg')}</p>
-                            <p class="price m-0 m-2">{t('destinations.from')} EUR 857*</p>
-                        </div>
-                    </div>
-
-                    <div class="col-12 d-flex flex-column align-items-center justify-content-center mt-3">
-                        <button class="btn-p btn-s mb-1">{t('destinations.more_fare')}</button>
-                        <span class="msg">{t('destinations.conditions')}</span>
-                    </div>
-
-                </div>
-            </div>
+            <Destinos />
 
         </section>
     </>

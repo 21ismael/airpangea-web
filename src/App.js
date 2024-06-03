@@ -1,14 +1,14 @@
+import { RouterProvider } from 'react-router-dom';
+import { router } from './router.js';
 import './App.css';
-import Header from './components/Header/Header';
-import Main from './components/Main/Main';
-import Footer from './components/Footer/Footer';
-import './i18n';
+import { I18nextProvider } from 'react-i18next';
+import i18n from './i18n'; 
 
 function App() {
   return <>
-    <Header />
-    <Main />
-    <Footer />
+    <I18nextProvider i18n={i18n}>
+      <RouterProvider router={router} />
+    </I18nextProvider>
   </>
 }
 

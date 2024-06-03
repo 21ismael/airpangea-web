@@ -12,7 +12,7 @@
     background-color: white;
     padding: 20px;
     border-radius: 3px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 100%;
 }
 
@@ -79,7 +79,7 @@
 .flight li {
     margin-bottom: 10px;
     background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 5px;
 }
 
@@ -186,7 +186,7 @@
     width: 100%;
     color: #666;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .servicios .icon-box {
@@ -231,7 +231,7 @@
 .box-destino {
     background-color: white;
     border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     height: auto;
     padding-bottom: 5px;
 }
@@ -261,12 +261,12 @@
 }
 
 .btn-s, .btn-s:hover {
-    background-color: white;
-    color: black;
-    border: 1px solid rgb(77, 77, 77);
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid rgb(43, 21, 21) !important;
 }
 
 .btn-s:hover {
-    box-shadow: 0 0 3px 0 rgba(0, 0, 0, .5);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
 }
 

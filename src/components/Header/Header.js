@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import './Header.css';
 import nav from '../../utils/nav';
 import logo_r_w from '../../assets/svg/logo-r-w.svg';
@@ -10,6 +11,8 @@ import Login from '../Login/Login';
 import SignUp from '../SignUp/SignUp';
 
 export default function Header() {
+    const navigate = useNavigate();
+
     /*Language*/
     let { t, i18n } = useTranslation();
     let changeLanguage = (lang) => {
@@ -34,9 +37,17 @@ export default function Header() {
         setUser(userData);
     };
 
+    useEffect(() => {
+        const storedUser = localStorage.getItem('user');
+        if(storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, []);
+
     const handleLogout = () => {
         localStorage.removeItem('user');
         setUser(null); // Actualiza el estado user al cerrar sesión
+        navigate('/'); 
     };
 
     return <>
