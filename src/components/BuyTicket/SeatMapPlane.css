@@ -49,3 +49,7 @@
 .select-booking {
     border-radius: 3px;
 }
+
+.selected {
+    background-color: yellow;
+}

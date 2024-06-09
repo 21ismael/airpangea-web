@@ -7,7 +7,11 @@ import formattedDate from '../../utils/formattedDate';
 import plane_icon from '../../assets/images/airplane_icon.png';
 import convertToAP from '../../utils/convertToAP';
 import Servicios from './Servicios';
-import Destinos from './Destinos'; 
+import Destinos from './Destinos';
+import img_1 from '../../assets/images/imagenesSobreNosotros/a380-sky-view-w300x300.jpg';
+import img_2 from '../../assets/images/imagenesSobreNosotros/sunlight-baths-the-blyde-river-canyon-w300x300.jpg';
+import img_3 from '../../assets/images/imagenesSobreNosotros/emirates-group-staff-group-photo-m300x300.jpg';
+import img_4 from '../../assets/images/imagenesSobreNosotros/family-planting-tree-w300x300.jpg';
 
 export default function Main() {
     const { t } = useTranslation();
@@ -114,7 +118,7 @@ export default function Main() {
             alert(JSON.stringify(flight));
             localStorage.setItem('flight', JSON.stringify(flight));
             localStorage.setItem('passengerCount', passengerCount)
-            navigate('/buy-ticket'); 
+            navigate('/buy-ticket');
         }
     };
 
@@ -173,7 +177,7 @@ export default function Main() {
                                 value={passengerCount}
                                 onChange={(e) => setPassengerCount(e.target.value)}
                                 min='1'
-                                max='10'
+                                max='4'
                                 className='mx-1 counter'
                             />
                         </div>
@@ -219,6 +223,33 @@ export default function Main() {
             </div>
 
             <Destinos />
+
+            <div class="row d-none d-xxl-flex justify-content-center px-5 mx-5">
+                <div class="col-12 text-center mb-3">
+                    <h2 class="titulo-acerca-nosotros">Acerca de nosotros</h2>
+                    <p class="texto-acerca-nosotros">Conozca más en profundidad nuestra historia, nuestro negocio y las iniciativas en materia de sostenibilidad.</p>
+                </div>
+                <div className='col-8'>
+                    <div class="row px-5 mx-5">
+                        <div class="d-flex flex-column align-items-center text-center gap-4 col-md-3" href="">
+                            <img class="img-acerca-nosotros " src={img_1} alt="" />
+                            <span class="link-sobre-nosotros">Nuestro negocio</span>
+                        </div>
+                        <div class="d-flex flex-column align-items-center text-center gap-4 col-md-3" href="">
+                            <img class="img-acerca-nosotros " src={img_2} alt="" />
+                            <span class="link-sobre-nosotros">Nuestro planeta</span>
+                        </div>
+                        <div class="d-flex flex-column align-items-center text-center gap-4 col-md-3" href="">
+                            <img class="img-acerca-nosotros " src={img_3} alt="" />
+                            <span class="link-sobre-nosotros">Nuestro equipo</span>
+                        </div>
+                        <div class="d-flex flex-column align-items-center text-center gap-4 col-md-3" href="">
+                            <img class="img-acerca-nosotros " src={img_4} alt="" />
+                            <span class="link-sobre-nosotros">Nuestras comunidades</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </section>
     </>

@@ -72,6 +72,10 @@
     border: 3px solid transparent;
 }
 
+.fare-card:hover {
+    border: 3px solid var(--color-red);
+}
+
 .fare-card img {
     width: 100%;
     height: auto;

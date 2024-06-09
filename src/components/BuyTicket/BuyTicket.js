@@ -25,10 +25,13 @@ export default function BuyTicket() {
     const navigate = useNavigate();
     const webServices = new WebServices();
 
+    const [error, setError] = useState('');
+
     useEffect(() => {
         const storedUser = JSON.parse(localStorage.getItem('user'));
         const storedFlight = localStorage.getItem('flight');
         const storedPassengerCount = localStorage.getItem('passengerCount');
+
         if (storedFlight && storedPassengerCount) {
             setFlight(JSON.parse(storedFlight));
             setPassengerCount(storedPassengerCount);
@@ -54,15 +57,33 @@ export default function BuyTicket() {
 
     const handleSubmit = async (event) => {
         try {
+            const emptyFields = passengers.some(passenger => !passenger.name || !passenger.lastName || !passenger.identityNumber || !passenger.seat);
+            if (emptyFields) {
+                setError("Por favor, complete todos los campos y asigne un asiento diferente para cada pasajero.");
+                return;
+            }
+
+            const selectedSeats = passengers.map(passenger => passenger.seat);
+            const duplicates = selectedSeats.some((seat, index) => selectedSeats.indexOf(seat) !== index);
+            if (duplicates) {
+                setError("Por favor, asegúrate de que cada pasajero tenga un asiento único.");
+                return;
+            }
+
+            if(!selectedFare) {
+                setError("Debe seleccionar una tarifa");
+                return;
+            }
+
             const updatedPassengers = passengers.map(passenger => ({
                 ...passenger,
                 fare: selectedFare
             }));
-    
+
             console.log(updatedPassengers);
-    
+
             const addedPassengers = [];
-    
+
             for (const passenger of updatedPassengers) {
                 let newPassenger = {
                     passenger: {
@@ -74,16 +95,16 @@ export default function BuyTicket() {
                     fare: passenger.fare,
                     seat: passenger.seat
                 };
-    
+
                 const addedPassengerResponse = await webServices.addPassenger(newPassenger.passenger);
                 const addedPassenger = {
-                    id: addedPassengerResponse.id, // Asignar el id devuelto por el servidor al pasajero
+                    id: addedPassengerResponse.id,
                     ...newPassenger
                 };
                 console.log("Passenger added successfully:", addedPassenger);
                 addedPassengers.push(addedPassenger);
             }
-    
+
             console.log(addedPassengers);
             localStorage.setItem('addedPassengers', JSON.stringify(addedPassengers));
             console.log("All passengers added successfully");
@@ -92,7 +113,7 @@ export default function BuyTicket() {
             console.error('Error adding passengers:', error);
         }
     };
-    
+
 
     const handlePassengerChange = (index, field, value) => {
         const updatedPassengers = passengers.map((passenger, i) => (
@@ -244,6 +265,11 @@ export default function BuyTicket() {
                             <p className='fare-text'>*Introduce los nombres tal como aparecen en el pasaporte o la documentación de viaje</p>
                         </div>
                         <div className='passengers mb-1 col-12 col-md-8'>
+                            {error && (
+                                <div className="alert alert-danger" role="alert">
+                                    {error}
+                                </div>
+                            )}
                             {Array.from({ length: passengerCount }).map((_, index) => (
                                 <div key={index} className='passenger-form mb-3'>
                                     <h5>Pasajero {index + 1}</h5>
@@ -292,15 +318,16 @@ export default function BuyTicket() {
                                     </div>
                                 </div>
                             ))}
+
+                            {/*Revision y pago*/}
+                            <div className="d-flex justify-content-center my-4">
+                                <button className="btn-p" onClick={handleSubmit}>Revisar y pagar</button>
+                            </div>
+
                         </div>
                         <div className='col-12 col-md-4'>
                             <SeatMapPlane seats={flight.seats} />
                         </div>
-                    </div>
-
-                    {/*Revision y pago*/}
-                    <div className="d-flex justify-content-center mt-4">
-                        <button className="btn-p" onClick={handleSubmit}>Revisar y pagar</button>
                     </div>
 
                     {/*JSON.stringify(flight)*/}

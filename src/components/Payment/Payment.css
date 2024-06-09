@@ -1,0 +1,46 @@
+.logo-payment img {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    width: 500px;
+}
+
+.payment h5 {
+    font-family: 'Emirates';
+    font-size: 25px;
+}
+
+.payment img {
+    width: 400px;
+}
+
+.user-icon, .credit-card {
+    width: 28px !important;
+    height: 28px !important;
+}
+
+.payment-dialog {
+    padding: 30px 25px;
+}
+
+.payment-dialog img{
+    width: 80px;
+}
+
+.payment-dialog input {
+    padding: 10px 15px;
+    border-radius: 3px;
+}
+
+.payment-dialog .btn-pay {
+    background-color: #0544b5;
+    color: white;
+    border: 0px solid #0544b5;
+    border-radius: 30px;
+    font-weight: bolder;
+    padding: 15px;
+}
+
+.paypal-text {
+    justify-content: start;
+}
+

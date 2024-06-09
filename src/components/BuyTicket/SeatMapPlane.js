@@ -1,7 +1,7 @@
 import React from 'react';
 import './SeatMapPlane.css';
 
-export default function SeatMapPlane({ seats }) {
+export default function SeatMapPlane({ seats, selectedSeats }) {
     const renderSeatMap = (seatLayout) => {
         return seatLayout.split('').map((seatType, index) => {
             let seatClass = 'seat';
@@ -22,6 +22,7 @@ export default function SeatMapPlane({ seats }) {
         <div className='airplane-container p-3'>
             <div className='row py-0'>
                 <div className='seats d-flex flex-column gap-2'>
+                    <p>{selectedSeats}</p>
                     <div className='d-flex gap-2 align-items-center'>
                         <div className='seat available'></div><label>Available</label>
                     </div>
