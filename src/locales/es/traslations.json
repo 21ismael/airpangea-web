@@ -5,7 +5,6 @@
     "about_us": "Sobre Nosotros",
     "our_services": "Nuestros Servicios",
     "log_out": "Cerrar Sesión",
-    
     "login": {
         "title": "Iniciar sesión en la cuenta",
         "email_placeholder": "Correo electrónico",
@@ -19,7 +18,6 @@
         "empty_field_error": "* Debes completar todos los campos",
         "invalid_credentials_error": "* Credenciales Incorrectas"
     },
-
     "signup": {
         "title": "Configuración de nueva cuenta",
         "name_placeholder": "Nombre",
@@ -34,16 +32,13 @@
         "login": "Iniciar sesión",
         "signup_with_apple": "Crear cuenta con Apple",
         "signup_with_google": "Crear cuenta con Google"
-        
     },
-
     "header": {
         "title_1": "Sus mejores",
         "title_2": "EXPERIENCIAS",
         "title_3": "corren de nuestra cuenta",
         "more_info": "Más información"
-    }, 
-    
+    },
     "flight": {
         "from": "Origen",
         "to": "Destino",
@@ -55,7 +50,6 @@
         "fare": "Tarifa Basic",
         "select": "Seleccionar"
     },
-
     "services": {
         "hotel": "Hoteles",
         "car": "Alquiler de coches",
@@ -64,7 +58,6 @@
         "booking": "Mis reservas",
         "route": "Mapa de rutas"
     },
-
     "destinations": {
         "title": "Destinos destacados desde",
         "title_span": "Alicante",
@@ -78,7 +71,70 @@
         "from": "desde",
         "more_fare": "Ver más tarifas",
         "conditions": "* Se aplican condiciones generales"
+    },
+
+    "about_us_bottom": {
+        "title": "Acerca de nosotros",
+        "description": "Conozca más en profundidad nuestra historia, nuestro negocio y las iniciativas en materia de sostenibilidad.",
+        "sections": {
+            "business": "Nuestro negocio",
+            "planet": "Nuestro planeta",
+            "team": "Nuestro equipo",
+            "communities": "Nuestras comunidades"
+        }
+    },
+
+    "buy_ticket": {
+        "selected_flight": "Tu vuelo seleccionado",
+        "choose_fare": "Elige tu tarifa",
+        "fare_note": "*El tipo de tarifa seleccionada se aplica a todos los pasajeros",
+        "fare_basic": "TARIFA BASIC",
+        "fare_regular": "TARIFA REGULAR",
+        "fare_plus": "TARIFA PLUS",
+        "continue_for": "Continuar por",
+        "passengers": "Pasajeros",
+        "passenger_note": "*Introduce los nombres tal como aparecen en el pasaporte o la documentación de viaje",
+        "first_name": "Nombre",
+        "last_name": "Apellido",
+        "passport_number": "Nº de pasaporte",
+        "seat": "Asiento",
+        "select_seat": "Seleccionar Asiento",
+        "review_pay": "Revisar y pagar",
+        "complete_all_fields": "Por favor, complete todos los campos y asigne un asiento diferente para cada pasajero.",
+        "unique_seats": "Por favor, asegúrate de que cada pasajero tenga un asiento único.",
+        "select_fare": "Debe seleccionar una tarifa",
+        "cabin_bag": "Bolsa en cabina",
+        "reserved_seat": "Asiento reservado",
+        "priority_boarding": "Prioridad de embarque",
+        "small_bag": "Pieza de equipaje de 10kg",
+        "large_bag": "Pieza de equipaje de 20kg",
+        "passenger": "Pasajero"
+    },
+
+    "seatmap": {
+        "available": "Disponible",
+        "not_available": "No disponible",
+        "selected": "Seleccionado"
+    },
+
+    "payment": {
+        "flight_info": "Información del vuelo",
+        "passenger_info": "Información de los pasajeros",
+        "passenger": "Pasajero",
+        "name": "Nombre",
+        "last_name": "Apellido",
+        "identity_number": "Nº de Identidad",
+        "fare": "Tarifa",
+        "seat": "Asiento",
+        "payment_info": "Información de Pago",
+        "pay_with_paypal": "Pagar con PayPal",
+        "enter_email": "Introduce tu email para pagar",
+        "total_price": "Total Precio",
+        "passengers": "Pasajero(s)",
+        "base_price": "Precio Base",
+        "fare_increment": "Incremento por tarifa",
+        "confirm_pay": "Confirmar Pago y Descargar PDF",
+        "email_or_mobile": "Email o número de móvil",
+        "error_message": "Por favor, introduzca su cuenta para realizar el pago."
     }
-    
-    
 }

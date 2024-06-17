@@ -75,5 +75,70 @@
         "from": "from",
         "more_fare": "See more fares",
         "conditions": "* General conditions apply"
+    },
+
+    "about_us_bottom": {
+        "title": "About Us",
+        "description": "Learn more about our history, our business, and our sustainability initiatives.",
+        "sections": {
+            "business": "Our Business",
+            "planet": "Our Planet",
+            "team": "Our Team",
+            "communities": "Our Communities"
+        }
+    },
+
+    "buy_ticket": {
+        "selected_flight": "Your selected flight",
+        "choose_fare": "Choose your fare",
+        "fare_note": "*The selected fare type applies to all passengers",
+        "fare_basic": "BASIC FARE",
+        "fare_regular": "REGULAR FARE",
+        "fare_plus": "PLUS FARE",
+        "continue_for": "Continue for",
+        "passengers": "Passengers",
+        "passenger_note": "*Enter names as they appear on passport or travel documents",
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "passport_number": "Passport Number",
+        "seat": "Seat",
+        "select_seat": "Select Seat",
+        "review_pay": "Review and Pay",
+        "complete_all_fields": "Please complete all fields and assign a different seat for each passenger.",
+        "unique_seats": "Please ensure each passenger has a unique seat.",
+        "select_fare": "You must select a fare",
+        "cabin_bag": "Cabin Bag",
+        "reserved_seat": "Reserved Seat",
+        "priority_boarding": "Priority Boarding",
+        "small_bag": "10kg Bag",
+        "large_bag": "20kg Bag",
+        "passenger": "Passenger"
+    },
+
+    "seatmap": {
+        "available": "Available",
+        "not_available": "Not available",
+        "selected": "Selected"
+    },
+
+    "payment": {
+        "flight_info": "Flight Information",
+        "passenger_info": "Passenger Information",
+        "passenger": "Passenger",
+        "name": "Name",
+        "last_name": "Last Name",
+        "identity_number": "Identity Number",
+        "fare": "Fare",
+        "seat": "Seat",
+        "payment_info": "Payment Information",
+        "pay_with_paypal": "Pay with PayPal",
+        "enter_email": "Enter your email to pay",
+        "total_price": "Total Price",
+        "passengers": "Passenger(s)",
+        "base_price": "Base Price",
+        "fare_increment": "Fare Increment",
+        "confirm_pay": "Confirm Pay and Download PDF",
+        "email_or_mobile": "Email or mobile number",
+        "error_message": "Please enter your account to make the payment."
     }
 }

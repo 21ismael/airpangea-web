@@ -1,0 +1,145 @@
+{
+    "sign_up": "S'inscrire",
+    "log_in": "Se connecter",
+    "book_a_flight": "Réserver un vol",
+    "about_us": "À propos de nous",
+    "our_services": "Nos services",
+    "log_out": "Se déconnecter",
+    "login": {
+        "title": "Connexion au compte",
+        "email_placeholder": "Email",
+        "password_placeholder": "Mot de passe",
+        "forgot_password": "Mot de passe oublié?",
+        "log_in": "Se connecter",
+        "sign_up_prompt": "Vous n'avez pas de compte?",
+        "sign_up": "S'inscrire",
+        "login_with_apple": "Se connecter avec Apple",
+        "login_with_google": "Se connecter avec Google",
+        "empty_field_error": "* Vous devez remplir tous les champs",
+        "invalid_credentials_error": "* Identifiants invalides"
+    },
+    "signup": {
+        "title": "Création d'un nouveau compte",
+        "name_placeholder": "Prénom",
+        "lastname_placeholder": "Nom de famille",
+        "email_placeholder": "Email",
+        "password_placeholder": "Mot de passe",
+        "sign_up": "Créer un compte",
+        "show_password": "Afficher le mot de passe",
+        "empty_field_error": "* Vous devez remplir tous les champs",
+        "signup_error": "Erreur lors de l'inscription",
+        "login_prompt": "Vous avez déjà un compte?",
+        "login": "Se connecter",
+        "signup_with_apple": "Créer un compte avec Apple",
+        "signup_with_google": "Créer un compte avec Google"
+    },
+
+    "header": {
+        "title_1": "Vos meilleures",
+        "title_2": "EXPÉRIENCES",
+        "title_3": "sont avec nous",
+        "more_info": "Plus d'informations"
+    },
+
+    "flight": {
+        "from": "De",
+        "to": "À",
+        "country": "Pays",
+        "select_airport": "Sélectionnez un aéroport",
+        "passengers": "Passager(s)",
+        "search_flights": "Rechercher des vols",
+        "available_flights": "Vols disponibles",
+        "fare": "Tarif de base",
+        "select": "Sélectionner"
+    },
+
+    "services": {
+        "hotel": "Hôtels",
+        "car": "Location de voitures",
+        "activities": "Activités",
+        "group": "Voyages en groupe",
+        "booking": "Mes réservations",
+        "route": "Carte des itinéraires"
+    },
+
+    "destinations": {
+        "title": "Destinations en vedette de",
+        "title_span": "Alicante",
+        "eau": "ÉMIRATS ARABES UNIS",
+        "eau_city": "Dubaï",
+        "thailand": "THAÏLANDE",
+        "mexico": "MEXIQUE",
+        "mexico_city": "Mexico",
+        "vietnam_city": "Hanoï",
+        "fare_msg": "Réservez le tarif de base jusqu'au 4 août",
+        "from": "de",
+        "more_fare": "Voir plus de tarifs",
+        "conditions": "* Conditions générales applicables"
+    },
+
+    "about_us_bottom": {
+        "title": "À propos de nous",
+        "description": "En savoir plus sur notre histoire, notre entreprise et nos initiatives en matière de durabilité.",
+        "sections": {
+            "business": "Notre entreprise",
+            "planet": "Notre planète",
+            "team": "Notre équipe",
+            "communities": "Nos communautés"
+        }
+    },
+
+    "buy_ticket": {
+        "selected_flight": "Votre vol sélectionné",
+        "choose_fare": "Choisissez votre tarif",
+        "fare_note": "*Le type de tarif sélectionné s'applique à tous les passagers",
+        "fare_basic": "TARIF DE BASE",
+        "fare_regular": "TARIF RÉGULIER",
+        "fare_plus": "TARIF PLUS",
+        "continue_for": "Continuer pour",
+        "passengers": "Passagers",
+        "passenger_note": "*Entrez les noms tels qu'ils apparaissent sur le passeport ou les documents de voyage",
+        "first_name": "Prénom",
+        "last_name": "Nom de famille",
+        "passport_number": "Numéro de passeport",
+        "seat": "Siège",
+        "select_seat": "Sélectionner un siège",
+        "review_pay": "Réviser et payer",
+        "complete_all_fields": "Veuillez remplir tous les champs et attribuer un siège différent à chaque passager.",
+        "unique_seats": "Veuillez vous assurer que chaque passager a un siège unique.",
+        "select_fare": "Vous devez sélectionner un tarif",
+        "cabin_bag": "Sac en cabine",
+        "reserved_seat": "Siège réservé",
+        "priority_boarding": "Embarquement prioritaire",
+        "small_bag": "Sac de 10kg",
+        "large_bag": "Sac de 20kg",
+        "passenger": "Passager"
+    },
+
+    "seatmap": {
+        "available": "Disponible",
+        "not_available": "Indisponible",
+        "selected": "Sélectionné"
+    },
+
+    "payment": {
+        "flight_info": "Informations sur le vol",
+        "passenger_info": "Informations sur les passagers",
+        "passenger": "Passager",
+        "name": "Prénom",
+        "last_name": "Nom de famille",
+        "identity_number": "Numéro d'identité",
+        "fare": "Tarif",
+        "seat": "Siège",
+        "payment_info": "Informations de paiement",
+        "pay_with_paypal": "Payer avec PayPal",
+        "enter_email": "Entrez votre email pour payer",
+        "total_price": "Prix total",
+        "passengers": "Passager(s)",
+        "base_price": "Prix de base",
+        "fare_increment": "Augmentation tarifaire",
+        "plus_vat": "+ TVA",
+        "confirm_pay": "Confirmer et télécharger le PDF",
+        "email_or_mobile": "Email ou numéro de mobile",
+        "error_message": "Veuillez entrer votre compte pour effectuer le paiement."
+    }
+}

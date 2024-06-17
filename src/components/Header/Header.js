@@ -60,6 +60,7 @@ export default function Header() {
                 <select onChange={(e) => changeLanguage(e.target.value)}>
                     <option value="es">Español</option>
                     <option value="en">English</option>
+                    <option value="fr">Français</option>
                 </select>
                 {user ? (
                     <>

@@ -224,28 +224,28 @@ export default function Main() {
 
             <Destinos />
 
-            <div class="row d-none d-xxl-flex justify-content-center px-5 mx-5">
-                <div class="col-12 text-center mb-3">
-                    <h2 class="titulo-acerca-nosotros">Acerca de nosotros</h2>
-                    <p class="texto-acerca-nosotros">Conozca más en profundidad nuestra historia, nuestro negocio y las iniciativas en materia de sostenibilidad.</p>
+            <div className="row d-none d-xl-flex justify-content-center px-5 mx-5 mb-5">
+                <div className="col-12 text-center mb-3">
+                    <h2 className="titulo-acerca-nosotros">{t('about_us_bottom.title')}</h2>
+                    <p className="texto-acerca-nosotros">{t('about_us_bottom.description')}</p>
                 </div>
-                <div className='col-8'>
-                    <div class="row px-5 mx-5">
-                        <div class="d-flex flex-column align-items-center text-center gap-4 col-md-3" href="">
-                            <img class="img-acerca-nosotros " src={img_1} alt="" />
-                            <span class="link-sobre-nosotros">Nuestro negocio</span>
+                <div className='col-10'>
+                    <div className="row px-5 mx-5">
+                        <div className="d-flex flex-column align-items-center text-center gap-4 col-md-3">
+                            <img className="img-acerca-nosotros" src={img_1} alt="" />
+                            <span className="link-sobre-nosotros">{t('about_us_bottom.sections.business')}</span>
                         </div>
-                        <div class="d-flex flex-column align-items-center text-center gap-4 col-md-3" href="">
-                            <img class="img-acerca-nosotros " src={img_2} alt="" />
-                            <span class="link-sobre-nosotros">Nuestro planeta</span>
+                        <div className="d-flex flex-column align-items-center text-center gap-4 col-md-3">
+                            <img className="img-acerca-nosotros" src={img_2} alt="" />
+                            <span className="link-sobre-nosotros">{t('about_us_bottom.sections.planet')}</span>
                         </div>
-                        <div class="d-flex flex-column align-items-center text-center gap-4 col-md-3" href="">
-                            <img class="img-acerca-nosotros " src={img_3} alt="" />
-                            <span class="link-sobre-nosotros">Nuestro equipo</span>
+                        <div className="d-flex flex-column align-items-center text-center gap-4 col-md-3">
+                            <img className="img-acerca-nosotros" src={img_3} alt="" />
+                            <span className="link-sobre-nosotros">{t('about_us_bottom.sections.team')}</span>
                         </div>
-                        <div class="d-flex flex-column align-items-center text-center gap-4 col-md-3" href="">
-                            <img class="img-acerca-nosotros " src={img_4} alt="" />
-                            <span class="link-sobre-nosotros">Nuestras comunidades</span>
+                        <div className="d-flex flex-column align-items-center text-center gap-4 col-md-3">
+                            <img className="img-acerca-nosotros" src={img_4} alt="" />
+                            <span className="link-sobre-nosotros">{t('about_us_bottom.sections.communities')}</span>
                         </div>
                     </div>
                 </div>

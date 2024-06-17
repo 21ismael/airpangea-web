@@ -59,19 +59,19 @@ export default function BuyTicket() {
         try {
             const emptyFields = passengers.some(passenger => !passenger.name || !passenger.lastName || !passenger.identityNumber || !passenger.seat);
             if (emptyFields) {
-                setError("Por favor, complete todos los campos y asigne un asiento diferente para cada pasajero.");
+                setError(t("buy_ticket.complete_all_fields"));
                 return;
             }
 
             const selectedSeats = passengers.map(passenger => passenger.seat);
             const duplicates = selectedSeats.some((seat, index) => selectedSeats.indexOf(seat) !== index);
             if (duplicates) {
-                setError("Por favor, asegúrate de que cada pasajero tenga un asiento único.");
+                setError(t("buy_ticket.unique_seats"));
                 return;
             }
 
             if(!selectedFare) {
-                setError("Debe seleccionar una tarifa");
+                setError(t("buy_ticket.select_fare"));
                 return;
             }
 
@@ -114,7 +114,6 @@ export default function BuyTicket() {
         }
     };
 
-
     const handlePassengerChange = (index, field, value) => {
         const updatedPassengers = passengers.map((passenger, i) => (
             i === index ? { ...passenger, [field]: value } : passenger
@@ -143,13 +142,12 @@ export default function BuyTicket() {
         return seats;
     };
 
-
     return (
         <>
             <div className='d-flex justify-content-center align-items-center buy-ticket'>
                 <div className='container-1000 w-100'>
                     <div className='flight-title d-flex m-0 align-items-center'>
-                        <h3>Tu vuelo seleccionado</h3>
+                        <h3>{t('buy_ticket.selected_flight')}</h3>
                         <img src={plane_icon} alt="Plane icon" />
                     </div>
 
@@ -174,10 +172,10 @@ export default function BuyTicket() {
                     {/* Select fare */}
                     <div className='select-fare mt-4 mb-1'>
                         <div className='flight-title d-flex m-0 align-items-center'>
-                            <h3>Elige tu tarifa</h3>
+                            <h3>{t('buy_ticket.choose_fare')}</h3>
                             <img src={plane_icon} alt="Plane icon" />
                         </div>
-                        <p className='fare-text'>*El tipo de tarifa seleccionada se aplica a todos los pasajeros</p>
+                        <p className='fare-text'>{t('buy_ticket.fare_note')}</p>
                     </div>
 
                     <div className='row m-0 p-0 d-flex justify-content-center'>
@@ -187,16 +185,16 @@ export default function BuyTicket() {
                                 className={`fare-card text-center d-flex flex-column gap-1 ${selectedFare === "Basic" ? 'selected-fare' : ''}`}
                             >
                                 <img src={fare_basic} alt="img" />
-                                <p className="fare-title mt-2 mb-0">TARIFA <span>BASIC</span></p>
+                                <p className="fare-title mt-2 mb-0">{t('buy_ticket.fare_basic')}</p>
                                 <div className='fare-sentence d-flex align-items-center mx-2 my-1'>
                                     <img src={bolsa} alt='icon' />
-                                    <p className='m-0 mx-1'>Bolsa en cabina</p>
+                                    <p className='m-0 mx-1'>{t('buy_ticket.cabin_bag')}</p>
                                 </div>
                                 <div className='fare-sentence d-flex align-items-center mx-2 my-1'>
                                     <img src={asiento} alt='icon' />
-                                    <p className='m-0 mx-1'>Asiento reservado</p>
+                                    <p className='m-0 mx-1'>{t('buy_ticket.reserved_seat')}</p>
                                 </div>
-                                <button className='new-price mt-auto mb-2'>Continuar por <span>{flight.price.toFixed(2)}€</span></button>
+                                <button className='new-price mt-auto mb-2'>{t('buy_ticket.continue_for')} <span>{flight.price.toFixed(2)}€</span></button>
                             </div>
                         </div>
 
@@ -206,24 +204,24 @@ export default function BuyTicket() {
                                 className={`fare-card text-center d-flex flex-column gap-1 ${selectedFare === "Regular" ? 'selected-fare' : ''}`}
                             >
                                 <img src={fare_regular} alt="img" />
-                                <p className="fare-title mt-2 mb-0">TARIFA <span>REGULAR</span></p>
+                                <p className="fare-title mt-2 mb-0">{t('buy_ticket.fare_regular')}</p>
                                 <div className='fare-sentence d-flex align-items-center mx-2 my-1'>
                                     <img src={bolsa} alt='icon' />
-                                    <p className='m-0 mx-1'>Bolsa en cabina</p>
+                                    <p className='m-0 mx-1'>{t('buy_ticket.cabin_bag')}</p>
                                 </div>
                                 <div className='fare-sentence d-flex align-items-center mx-2 my-1'>
                                     <img src={asiento} alt='icon' />
-                                    <p className='m-0 mx-1'>Asiento reservado</p>
+                                    <p className='m-0 mx-1'>{t('buy_ticket.reserved_seat')}</p>
                                 </div>
                                 <div className='fare-sentence d-flex align-items-center mx-2 my-1'>
                                     <img src={prioridad} alt='icon' />
-                                    <p className='m-0 mx-1'>Prioridad de embarque</p>
+                                    <p className='m-0 mx-1'>{t('buy_ticket.priority_boarding')}</p>
                                 </div>
                                 <div className='fare-sentence d-flex align-items-center mx-2 my-1'>
                                     <img src={equipaje_pequeño} alt='icon' />
-                                    <p className='m-0 mx-1'>Pieza de equipaje de 10kg</p>
+                                    <p className='m-0 mx-1'>{t('buy_ticket.small_bag')}</p>
                                 </div>
-                                <button className='new-price mt-auto mb-2'>Continuar por <span>{(flight.price * 1.25).toFixed(2)}€</span></button>
+                                <button className='new-price mt-auto mb-2'>{t('buy_ticket.continue_for')} <span>{(flight.price * 1.25).toFixed(2)}€</span></button>
                             </div>
                         </div>
 
@@ -233,36 +231,36 @@ export default function BuyTicket() {
                                 className={`fare-card text-center d-flex flex-column gap-1 ${selectedFare === "Plus" ? 'selected-fare' : ''}`}
                             >
                                 <img src={fare_plus} alt="img" />
-                                <p className="fare-title mt-2 mb-0">TARIFA <span>PLUS</span></p>
+                                <p className="fare-title mt-2 mb-0">{t('buy_ticket.fare_plus')}</p>
                                 <div className='fare-sentence d-flex align-items-center mx-2 my-1'>
                                     <img src={bolsa} alt='icon' />
-                                    <p className='m-0 mx-1'>Bolsa en cabina</p>
+                                    <p className='m-0 mx-1'>{t('buy_ticket.cabin_bag')}</p>
                                 </div>
                                 <div className='fare-sentence d-flex align-items-center mx-2 my-1'>
                                     <img src={asiento} alt='icon' />
-                                    <p className='m-0 mx-1'>Asiento reservado</p>
+                                    <p className='m-0 mx-1'>{t('buy_ticket.reserved_seat')}</p>
                                 </div>
                                 <div className='fare-sentence d-flex align-items-center mx-2 my-1'>
                                     <img src={prioridad} alt='icon' />
-                                    <p className='m-0 mx-1'>Prioridad de embarque</p>
+                                    <p className='m-0 mx-1'>{t('buy_ticket.priority_boarding')}</p>
                                 </div>
                                 <div className='fare-sentence d-flex align-items-center mx-2'>
                                     <img src={equipaje_grande} alt='icon' />
-                                    <p className='m-0 mx-1'>Pieza de equipaje de 20kg</p>
+                                    <p className='m-0 mx-1'>{t('buy_ticket.large_bag')}</p>
                                 </div>
-                                <button className='new-price mt-auto mb-2'>Continuar por <span>{(flight.price * 1.5).toFixed(2)}€</span></button>
+                                <button className='new-price mt-auto mb-2'>{t('buy_ticket.continue_for')} <span>{(flight.price * 1.5).toFixed(2)}€</span></button>
                             </div>
                         </div>
                     </div>
 
-                    {/*Insertar los pasajeros */}
+                    {/* Insertar los pasajeros */}
                     <div className='row m-0 p-0 mt-4'>
                         <div>
                             <div className='flight-title d-flex m-0 align-items-center col-12'>
-                                <h3>Pasajeros</h3>
+                                <h3>{t('buy_ticket.passengers')}</h3>
                                 <img src={plane_icon} alt="Plane icon" />
                             </div>
-                            <p className='fare-text'>*Introduce los nombres tal como aparecen en el pasaporte o la documentación de viaje</p>
+                            <p className='fare-text'>{t('buy_ticket.passenger_note')}</p>
                         </div>
                         <div className='passengers mb-1 col-12 col-md-8'>
                             {error && (
@@ -272,10 +270,10 @@ export default function BuyTicket() {
                             )}
                             {Array.from({ length: passengerCount }).map((_, index) => (
                                 <div key={index} className='passenger-form mb-3'>
-                                    <h5>Pasajero {index + 1}</h5>
+                                    <h5>{t('buy_ticket.passenger')} {index + 1}</h5>
                                     <div className='row'>
                                         <div className='form-group col-6'>
-                                            <label>Nombre</label>
+                                            <label>{t('buy_ticket.first_name')}</label>
                                             <input
                                                 type="text"
                                                 value={passengers[index]?.name}
@@ -283,7 +281,7 @@ export default function BuyTicket() {
                                             />
                                         </div>
                                         <div className='form-group col-6'>
-                                            <label>Apellido</label>
+                                            <label>{t('buy_ticket.last_name')}</label>
                                             <input
                                                 type="text"
                                                 value={passengers[index]?.lastName}
@@ -291,7 +289,7 @@ export default function BuyTicket() {
                                             />
                                         </div>
                                         <div className='form-group col-8'>
-                                            <label>Nº de pasaporte</label>
+                                            <label>{t('buy_ticket.passport_number')}</label>
                                             <input
                                                 type="text"
                                                 value={passengers[index]?.identityNumber}
@@ -299,7 +297,7 @@ export default function BuyTicket() {
                                             />
                                         </div>
                                         <div className='form-group col-4'>
-                                            <label>Asiento</label>
+                                            <label>{t('buy_ticket.seat')}</label>
                                             <select
                                                 name="seat"
                                                 className="select-seat"
@@ -307,7 +305,7 @@ export default function BuyTicket() {
                                                 onChange={(e) => handlePassengerChange(index, 'seat', e.target.value)}
                                                 disabled={!flight}
                                             >
-                                                <option value="">Select Seat</option>
+                                                <option value="">{t('buy_ticket.select_seat')}</option>
                                                 {generateSeatOptions().map(seat => (
                                                     <option key={seat} value={seat}>
                                                         {seat}
@@ -319,18 +317,18 @@ export default function BuyTicket() {
                                 </div>
                             ))}
 
-                            {/*Revision y pago*/}
+                            {/* Revisión y pago */}
                             <div className="d-flex justify-content-center my-4">
-                                <button className="btn-p" onClick={handleSubmit}>Revisar y pagar</button>
+                                <button className="btn-p" onClick={handleSubmit}>{t('buy_ticket.review_pay')}</button>
                             </div>
 
                         </div>
                         <div className='col-12 col-md-4'>
-                            <SeatMapPlane seats={flight.seats} />
+                            <SeatMapPlane seats={flight.seats} selectedSeats={passengers.map(passenger => generateSeatOptions().indexOf(passenger.seat))}/>
                         </div>
                     </div>
 
-                    {/*JSON.stringify(flight)*/}
+                    {/* JSON.stringify(flight) */}
                 </div>
             </div>
         </>

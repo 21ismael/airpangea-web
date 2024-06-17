@@ -11,6 +11,7 @@ import './Print.css';
 import codigo_barras from './9185553.png';
 import paypal_logo from './paypal-logo.svg';
 import logo_black from '../../assets/svg/logo-black.svg';
+import WebServices from '../../services/WebServices';
 
 export default function Payment() {
     const { t } = useTranslation();
@@ -21,6 +22,7 @@ export default function Payment() {
     const navigate = useNavigate();
     const [showDialog, setShowDialog] = useState(false);
     const printableRef = useRef();
+    const webServices = new WebServices();
 
     const openDialog = () => {
         setShowDialog(true);
@@ -37,19 +39,53 @@ export default function Payment() {
         if (storedUser && storedFlight && addedPassengers) {
             setFlight(JSON.parse(storedFlight));
             setPassengers(JSON.parse(addedPassengers));
+            console.log(addedPassengers)
         } else {
             navigate('/');
         }
     }, [navigate]);
 
-    const handlePayAndPrint = () => {
+    const updateSeatAvailability = (seatString, seat, status) => {
+        const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+        const seatArray = seatString.split('').filter(s => s !== ' ');
+        const seatIndex = rows.indexOf(seat[0]) * 3 + parseInt(seat[1]) - 1;
+        seatArray[seatIndex] = status;
+        // Recuperar los espacios en blanco
+        for (let i = 0; i < seatArray.length; i++) {
+            if (seatString[i] === ' ') {
+                seatArray.splice(i, 0, ' ');
+            }
+        }
+        return seatArray.join('');
+    };
+
+    const handlePayAndPrint = async () => {
         if (!email) {
-            setErrorMessage('Por favor, introduzca su cuenat para realizar el pago.');
+            setErrorMessage(t('payment.error_message'));
             return;
         }
+
+        let updatedSeats = flight.seats;
+
+        for (const passenger of passengers) {
+            const passengerToInsert = {
+                fare: passenger.fare,
+                seat: passenger.seat,
+                passengerId: passenger.id,
+                flightId: flight.id
+            };
+
+            await webServices.addBooking(passengerToInsert);
+
+            updatedSeats = updateSeatAvailability(updatedSeats, passengerToInsert.seat, 'X');
+        }
+
+        const updatedFlight = { ...flight, seats: updatedSeats };
+        await webServices.updateFlight(updatedFlight);
+
         setShowDialog(false);
         window.print();
-        navigate('/')
+        navigate('/');
     };
 
     if (!flight) {
@@ -63,6 +99,7 @@ export default function Payment() {
         totalPrice = totalPrice * 1.5;
     }
     totalPrice = totalPrice * passengers.length;
+    totalPrice = totalPrice.toFixed(2);
 
     return (
         <>
@@ -73,7 +110,7 @@ export default function Payment() {
                     </div>
 
                     <div className='flight-title d-flex m-0 align-items-center'>
-                        <h3>Información del vuelo </h3>
+                        <h3>{t('payment.flight_info')}</h3>
                         <img src={plane_icon} alt="Plane icon" />
                     </div>
 
@@ -87,7 +124,7 @@ export default function Payment() {
                                 {flight.airportDeparture?.city} ----- <div className='codeAP'>{convertToAP(flight.id)}</div> ----- {flight.airportArrival?.city}
                             </div>
                             <div className="col-6 col-md-2 mt-2 fare d-flex flex-column justify-content-center">
-                                {t('flight.fare')} <br /><span>{flight.price}€</span>
+                                {t('payment.fare')} <br /><span>{flight.price}€</span>
                             </div>
                             <div className="col-6 col-md-3 date d-flex align-items-center justify-content-end">
                                 <div className=''>{getDate(flight.arrivalDateTime)}</div>
@@ -97,19 +134,19 @@ export default function Payment() {
 
                     {/* Información de pasajeros */}
                     <div className='flight-title d-flex m-0 align-items-center mt-4'>
-                        <h3>Información de los pasajeros </h3>
+                        <h3>{t('payment.passenger_info')}</h3>
                         <img src={user_icon} alt="User icon" className='user-icon' />
                     </div>
                     <div className="flight-info payment">
                         <div className='row'>
                             {passengers.map((passenger, index) => (
                                 <div key={index} className='col-6 col-md-3'>
-                                    <h5>Pasajero {index + 1}</h5>
-                                    <p>Name: {passenger.passenger.name}</p>
-                                    <p>Last Name: {passenger.passenger.lastName}</p>
-                                    <p>Identity Number: {passenger.passenger.identityNumber}</p>
-                                    <p>Fare: {passenger.fare}</p>
-                                    <p>Seat: {passenger.seat}</p>
+                                    <h5>{t('payment.passenger')} {index + 1}</h5>
+                                    <p>{t('payment.name')}: {passenger.passenger.name}</p>
+                                    <p>{t('payment.last_name')}: {passenger.passenger.lastName}</p>
+                                    <p>{t('payment.identity_number')}: {passenger.passenger.identityNumber}</p>
+                                    <p>{t('payment.fare')}: {passenger.fare}</p>
+                                    <p>{t('payment.seat')}: {passenger.seat}</p>
                                 </div>
                             ))}
 
@@ -119,15 +156,15 @@ export default function Payment() {
 
                     {/* Pagar y descargar PDF */}
                     <div className='flight-title d-flex m-0 align-items-center mt-4'>
-                        <h3>Información de Pago </h3>
+                        <h3>{t('payment.payment_info')}</h3>
                         <img src={credit_card} alt="Credit icon" className='credit-card' />
                     </div>
                     <div className="flight-info payment">
                         <div className='d-flex justify-content-between row'>
                             <div className='col-12 col-md-8'>
-                                {passengers.length} x Pasajeros * (Precio Base + Incremento por tarifa) = {totalPrice} € + IVA
+                                {passengers.length} x {t('payment.passengers')} * ({t('payment.base_price')} + {t('payment.fare_increment')}) = {totalPrice}€ +  IVA
                             </div>
-                            <button className='btn-p col-6 col-sm-4 mt-3 mt-sm-0' onClick={openDialog}>Pagar con Paypal</button>
+                            <button className='btn-p col-6 col-sm-4 mt-3 mt-sm-0' onClick={openDialog}>{t('payment.pay_with_paypal')}</button>
                         </div>
                     </div>
                 </div>
@@ -139,18 +176,18 @@ export default function Payment() {
                         <button className='btn-close' onClick={closeDialog}></button>
                         <div className='w-100 d-flex flex-column justify-content-center align-items-center mt-3'>
                             <img src={paypal_logo} alt="paypal logo" />
-                            <h3>Pay with PayPal</h3>
-                            <p>Enter your email to pay <b>{totalPrice}€</b> to <b>AirPangea S.L</b></p>
+                            <h3>{t('payment.pay_with_paypal')}</h3>
+                            <p>{t('payment.enter_email')} <b>{totalPrice}€</b> to <b>AirPangea S.L</b></p>
                             <input 
                                 className='w-100' 
                                 type='email' 
-                                placeholder='Email or mobile number' 
+                                placeholder={t('payment.email_or_mobile')} 
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 required
                             />
                             {errorMessage && <p className="error-message">{errorMessage}</p>}
-                            <button className='w-100 mt-3 btn-pay' onClick={handlePayAndPrint}>Confirm Pay and Download PDF</button>
+                            <button className='w-100 mt-3 btn-pay' onClick={handlePayAndPrint}>{t('payment.confirm_pay')}</button>
                         </div>
                     </div>
                 </div>

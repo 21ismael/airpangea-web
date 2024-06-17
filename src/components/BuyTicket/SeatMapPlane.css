@@ -51,5 +51,11 @@
 }
 
 .selected {
-    background-color: yellow;
+    background-color: #ffcb0d;
+}
+
+.seat-info {
+    border: 1px solid lightgray;
+    width: 30px;
+    height: 32px;
 }
